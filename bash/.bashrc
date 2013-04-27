@@ -179,8 +179,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-export PATH="$PATH:~/.bin/"
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -193,4 +191,4 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH:/home/monner_r/.local/bin"
+export PATH="~/.bin/:$HOME/.rbenv/bin:$PATH:/home/monner_r/.local/bin"
