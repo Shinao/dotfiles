@@ -9,8 +9,16 @@
 "\ek":history-search-backward
 "\eh":backward-char
 "\el":forward-char
+"\ee": end-of-line
+"\ea": beginning-of-line
+"\ex": delete-char
+"\eq": backward-delete-char
+"\en": "\C-k\C-u"
 "\em":"make re\C-m"
 "\es":"\C-asudo \C-m"
+
+# i cant believe this is not default
+set blink-matching-paren on
 
 # Insensitive case because we dont feel anything
 set completion-ignore-case On
