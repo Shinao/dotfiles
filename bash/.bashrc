@@ -21,7 +21,7 @@ HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-# shopt -s checkwinsize
+shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -75,9 +75,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# FTW
-# set -o vi
-
 # Colors
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
@@ -95,80 +92,6 @@ _PS1folder="$txtblu \W$txtrst"
 _PS1end=" › "
 export PS1="$_PS1host$_PS1folder$_PS1end"
 unset _PS1host _PS1folder _PS1time _PS1git _PS1end
-
-# Alias
-alias k='kill -9'
-alias f='fg'
-alias ll='ls -l'
-alias l='ls -l'
-alias w='ls -l'
-alias a='cd ..'
-alias d='cd'
-alias c='clean'
-alias md='mkdir -p'
-alias la='ls -a'
-alias emacs='emacs -nw'
-alias clean='find -maxdepth 1 -name "#*#" -delete;find -maxdepth 1 -name "*~" -delete'
-alias ne='emacs'
-alias e='emacs'
-alias zz='zlock -immed -text "Hello stranger. Good bye stranger." -pwtext superman'
-alias xnorme='~/script/norme.py ./*'
-alias afs='cd /u/all/monner_r/rendu'
-alias soff='xset -dpms s off'
-alias bye='sudo hibernate'
-alias episvn='sh ~/script/episvn.sh'
-alias skm='. ~/script/switch_keymap.sh'
-alias v='vim'
-alias t='tmux -2'
-
-extract () {
-if [ -f $1 ] ; then
-    case $1 in
-      *.tar.bz2)   tar xjf $1     ;;
-      *.tar.gz)    tar xzf $1     ;;
-      *.bz2)       bunzip2 $1     ;;
-      *.rar)       unrar e $1     ;;
-      *.gz)        gunzip $1      ;;
-      *.tar)       tar xf $1      ;;
-      *.tbz2)      tar xjf $1     ;;
-      *.tgz)       tar xzf $1     ;;
-      *.zip)       unzip $1       ;;
-      *.Z)         uncompress $1  ;;
-      *.7z)        7z x $1        ;;
-      *)     echo "'$1' cannot be extracted via extract()" ;;
-       esac
-    else
-       echo "'$1' is not a valid file"
-    fi
-}
-
-function google() {
-    command google-chrome "http://google.com/search?q=$1"
-}
-
-function man() {
-    if [ "$1" == "google" ]
-    then
-	command google-chrome "http://google.com/search?q=$2"
-    else
-	command man $@;
-    fi
-}
-
-function repeat() {
-    n=$1
-    sleep=$2
-    shift 2
-    while [ $(( n -= 1 )) -ge 0 ]
-    do
-	eval "$@"
-	sleep $sleep
-    done
-}
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -191,4 +114,9 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(rbenv init -)"
-export PATH="~/.bin/:$HOME/.rbenv/bin:$PATH:/home/monner_r/.local/bin"
+export PATH="${PATH}:/home/${USER}/bin"
+
+# if no session is started, start a new session
+if which tmux 2>&1 >/dev/null; then
+    test -z ${TMUX} && tmux -2
+fi;

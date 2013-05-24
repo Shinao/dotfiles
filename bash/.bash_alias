@@ -1,0 +1,72 @@
+# Alias
+alias k='kill -9'
+alias f='fg'
+alias w='ls -l'
+alias wa='ls -la'
+alias a='cd ..'
+alias d='cd'
+alias c='clean'
+alias clean='find -maxdepth 1 -name "#*#" -delete;find -maxdepth 1 -name "*~" -delete'
+alias xnorme='~/script/norme.py ./*'
+alias episvn='sh ~/script/episvn.sh'
+alias v='vim'
+alias t='tmux -2'
+
+// Goto and create folder if needed
+m ()
+{
+    if [ "$1" == "" ]; then
+        echo "mcd directory-name";
+    else
+        if [ ! -d $1 ]; then
+            mkdir $1;
+        fi;
+	cd $1;
+    fi
+}
+
+extract () {
+if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1     ;;
+      *.tar.gz)    tar xzf $1     ;;
+      *.bz2)       bunzip2 $1     ;;
+      *.rar)       unrar e $1     ;;
+      *.gz)        gunzip $1      ;;
+      *.tar)       tar xf $1      ;;
+      *.tbz2)      tar xjf $1     ;;
+      *.tgz)       tar xzf $1     ;;
+      *.zip)       unzip $1       ;;
+      *.Z)         uncompress $1  ;;
+      *.7z)        7z x $1        ;;
+      *)     echo "'$1' cannot be extracted via extract()" ;;
+       esac
+    else
+       echo "'$1' is not a valid file"
+    fi
+}
+
+function google() {
+    command google-chrome "http://google.com/search?q=$1"
+}
+
+function man() {
+    if [ "$1" == "google" ]
+    then
+	command google-chrome "http://google.com/search?q=$2"
+    else
+	command man $@;
+    fi
+}
+
+function repeat() {
+    n=$1
+    sleep=$2
+    shift 2
+    while [ $(( n -= 1 )) -ge 0 ]
+    do
+	eval "$@"
+	sleep $sleep
+    done
+}
+
