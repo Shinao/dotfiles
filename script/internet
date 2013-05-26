@@ -1,4 +1,3 @@
-internet=`spark 0 100 | awk '{print substr($0, 4, 3)}'`
 internet="☠"
 interneton="ONLINE"
 internetoff="OFFLINE"
