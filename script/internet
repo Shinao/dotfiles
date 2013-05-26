@@ -1,0 +1,6 @@
+internet=`spark 0 100 | awk '{print substr($0, 4, 3)}'`
+internet="☠"
+interneton="ONLINE"
+internetoff="OFFLINE"
+gwname=`nm-tool | grep "*" | tail -1 | cut -d: -f1 | sed -e 's/ //g' -e 's/*//'`
+ping -W 4 -c 1 google.com > /dev/null && echo "$gwname - #[fg=green]$interneton#[default]" || echo "$gwname - #[fd=red]$internetoff#[default]"

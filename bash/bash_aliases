@@ -1,7 +1,8 @@
 # Alias
+alias ll='ls -l --color=auto'
 alias k='kill -9'
 alias f='fg'
-alias w='ls -l'
+alias w='ls -l --color=auto'
 alias wa='ls -la'
 alias a='cd ..'
 alias d='cd'
@@ -12,7 +13,7 @@ alias episvn='sh ~/script/episvn.sh'
 alias v='vim'
 alias t='tmux -2'
 
-// Goto and create folder if needed
+# Goto and create folder if needed
 m ()
 {
     if [ "$1" == "" ]; then
