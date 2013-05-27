@@ -1,4 +1,5 @@
 ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
+ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/inputrc ~/.inputrc
 ln -s ~/.dotfiles/git/gitignore ~/.gitignore
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
