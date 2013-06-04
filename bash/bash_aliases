@@ -10,7 +10,7 @@ alias c='clean'
 alias clean='find -maxdepth 1 -name "#*#" -delete;find -maxdepth 1 -name "*~" -delete'
 alias xnorme='~/script/norme.py ./*'
 alias episvn='sh ~/script/episvn.sh'
-alias v='vim'
+alias v='vi'
 alias t='tmux -2'
 
 # Goto and create folder if needed
