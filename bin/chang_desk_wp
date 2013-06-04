@@ -1,0 +1,20 @@
+#!/bin/bash
+
+WP_DIR=$HOME/Dropbox/Public/Wallpapers
+MIN_SWAP=30
+MAX_SWAP=130
+
+cd $WP_DIR
+while [ 1 ] 
+  do
+  random_num=$((( $RANDOM % ($MAX_SWAP - MIN_SWAP) ) + MIN_SWAP)) 
+
+## GET RANDOM WALLPAPERS
+files=($WP_DIR/*)
+file_rd="${files[RANDOM % ${#files[@]}]}"
+
+## CHANGING WALLPAPER
+feh --bg-scale $file_rd
+
+  sleep $random_num
+done
