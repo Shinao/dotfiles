@@ -1,8 +1,8 @@
 #!/bin/bash
 
 WP_DIR=$HOME/Dropbox/Public/Wallpapers
-MIN_SWAP=30
-MAX_SWAP=130
+MIN_SWAP=30*60
+MAX_SWAP=130*60
 
 cd $WP_DIR
 while [ 1 ] 

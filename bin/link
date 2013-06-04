@@ -1,3 +1,7 @@
+rmdir ~/bin
+rm ~/.bashrc
+rm ~/.bash_aliases
+rm ~/.inputrc
 ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
 ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
 ln -s ~/.dotfiles/inputrc ~/.inputrc
@@ -5,3 +9,4 @@ ln -s ~/.dotfiles/git/gitignore ~/.gitignore
 ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/vimrc ~/.vimrc
+ln -s ~/.dotfiles/bin ~/bin
