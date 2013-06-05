@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 2
+
 WP_DIR=$HOME/Dropbox/Public/Wallpapers
 MIN_SWAP=30*60
 MAX_SWAP=130*60
