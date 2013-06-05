@@ -81,7 +81,7 @@ cb-cowpowers &
 conky -q &
 
 ## FUCK LOCK SCREEN
-xautolock -time 5 -locker "slimlock" &
+xautolock -time 15 -locker "slimlock" &
 
 ## Remap caps lock to escape
 xmodmap -e "clear lock"
