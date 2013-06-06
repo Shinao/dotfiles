@@ -80,15 +80,12 @@ cb-cowpowers &
 ## Run the conky
 conky -q &
 
-## FUCK LOCK SCREEN
-xautolock -time 15 -locker "slimlock" &
-
-## Remap caps lock to escape
-xmodmap -e "clear lock"
-xmodmap -e "keycode 66 = Escape"
+##Remap caps lock to escape
+xmodmap -e "clear lock" &
+xmodmap -e "keycode 66 = Escape" &
 
 ## Changing wallpaper
-chang_desk_wp
+chang_desk_wp &
 
 ## nm-applet bullshit
-nm-applet
+#nm-applet &
