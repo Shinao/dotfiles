@@ -1,38 +1,3 @@
-" vimrc
-" Author: Aliou Diallo <aliou.diallo@me.com>
-" Source: https://github.com/aliou/dotvim/blob/master/vimrc
-
-" Init -------------------------------------------------------------------- {{{
-set nocompatible
-filetype off
-" }}}
-
-"   Vundle ---------------------------------------------------------------- {{{
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-Bundle 'scratch.vim'
-Bundle 'sjl/clam.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-obsession'
-Bundle 'scrooloose/syntastic'
-
-" Colors
-Bundle 'holokai'
-Bundle 'sjl/badwolf'
-Bundle 'tomasr/molokai'
-Bundle 'godlygeek/csapprox'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'chriskempson/base16-vim'
-Bundle 'altercation/vim-colors-solarized'
-
 syntax on
 filetype indent plugin on
 " }}}
@@ -226,16 +191,15 @@ nnoremap <leader>f mfggvGzO`f
 nnoremap <Space> zA
 " }}}
 
+nnoremap K {
+nnoremap J }
+
 " <Fx> Maps {{{
-inoremap <F2> <ESC>:NERDTreeToggle<CR>
-nnoremap <F2> :NERDTreeToggle<CR>
 " nnoremap <F3> :w<cr>:! clear ; echo '\#use "%";;' \| ocaml<cr>
 nnoremap <F3> :w<cr>:! clear ; linux32 ozc -x "%" -o a.out ; linux32 ./a.out<cr>
 " nnoremap <F3> :w<cr>:! clear ; sbcl --noinform --load main.lsp<cr>
 inoremap <F4> <ESC>:set paste!<CR>i
 nnoremap <F4> :set paste!<CR>
-inoremap <F5> <ESC>:GundoToggle<CR>
-nnoremap <F5> :GundoToggle<CR>
 
 " }}}
 
