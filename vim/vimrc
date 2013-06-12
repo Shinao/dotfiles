@@ -1,4 +1,4 @@
-syntax on
+﻿syntax on
 filetype indent plugin on
 " }}}
 
@@ -16,8 +16,7 @@ set cmdheight=2			" Status line height.
 set noshowmode			" Hide current mode.
 set number			" Show line number.
 set showcmd			" Show current command.
-set list			" Show invisible characters.
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ " Invisible character list.
+"set list 			" Show invisible characters.
 set ruler			" Show line and column in status bar.
 " set background=dark		"
 set t_Co=256			" Use 256 colors.

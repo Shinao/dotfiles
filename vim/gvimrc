@@ -1,0 +1,13 @@
+" fucking windows
+set guifont=Consolas:h10
+set go-=m
+  set go-=T
+  set go-=l
+  set go-=L
+  set go-=r
+  set go-=R
+
+set backspace=2
+set backspace=indent,eol,start
+
+colorscheme badwolf
