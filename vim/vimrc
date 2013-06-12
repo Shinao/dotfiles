@@ -4,9 +4,11 @@ filetype indent plugin on
 
 " Basic options ----------------------------------------------------------- {{{
 
+colorscheme badwolf
+
 let mapleader = ","		" <Leader> key.
 set autoread			" Update modified files outside of VIM.
-set textwidth=80		" Character limit.
+" set textwidth=80		" Character limit.
 " set colorcolumn=+1		" Highlight character limit.
 set hidden			" Allow buffers to be in the background without saving.
 set laststatus=2		" Show status bar.
@@ -22,7 +24,7 @@ set t_Co=256			" Use 256 colors.
 set scrolloff=999		" Keep the cursor centered in the screen
 set showbreak=↪			" The character to put to show a line has been wrapped
 set showmatch			" Highlight matching braces
-set matchtime=5			"
+" set matchtime=5			"
 " set notimeout			" Timeout on key codes.
 set ttimeout
 set timeoutlen=1000
@@ -191,8 +193,8 @@ nnoremap <leader>f mfggvGzO`f
 nnoremap <Space> zA
 " }}}
 
-nnoremap K {
-nnoremap J }
+noremap K {
+noremap J }
 
 " <Fx> Maps {{{
 " nnoremap <F3> :w<cr>:! clear ; echo '\#use "%";;' \| ocaml<cr>
@@ -203,164 +205,7 @@ nnoremap <F4> :set paste!<CR>
 
 " }}}
 
-" autocmd ----------------------------------------------------------------- {{{
-
-" Files ------------------------------------------------------------- {{{
-augroup someshit
-  autocmd!
-  autocmd FileType make setlocal ts=4 sts=4 sw=4 noexpandtab
-
-  autocmd BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}
-	\ set ft=ruby
-
-  autocmd BufRead,BufNewFile *.{md,markdown,mdown} set ft=markdown
-  autocmd Filetype markdown setlocal spell
-
-  autocmd filetype gitcommit setlocal textwidth=72
-  autocmd filetype gitcommit setlocal spell
-
-  autocmd filetype css inoremap { <space>{<CR>}<esc>O
-
-  autocmd BufNewFile,BufRead *.t set filetype=cram
-
-  autocmd FileType * autocmd InsertLeave * silent! wa
-augroup END
-
-augroup dennisritchie
-  autocmd BufWritePost *.c,*.cpp,*.h,*.hh,*.hpp
-	\ silent! !ctags -R --exclude=*.so* .
-  autocmd FileType c,cpp
-	\ nnoremap <localleader>k :silent Clam man <C-r><C-w><CR>gg:set ft=man<CR>
-augroup END
-" }}}
-
-" Interface --------------------------------------------------------- {{{
-augroup position
-  autocmd!
-  " Restore cursor position.
-  autocmd BufReadPost *
-	\ if &filetype !~ '^git\c' &&
-	\ line("'\"") > 1 && line("'\"") <= line("$") |
-	\   exe "normal! g`\"" |
-	\ endif
-
-  " Resize splits when window is resized.
-  autocmd VimResized * :wincmd =
-augroup END
-
-augroup cursorline_
-  autocmd!
-  " Hightlight current line in current window and normal mode.
-  autocmd WinLeave,InsertEnter * set nocursorline
-  autocmd WinEnter,InsertLeave * set cursorline
-augroup END
-" }}}
-
-" Folds -------------------------------------------------------------- {{{
-" Unfold whole file.
-set foldlevelstart=1
-
-augroup filtypes
-  autocmd!
-  autocmd FileType c,cpp setlocal foldmethod=marker foldmarker={,}
-  autocmd Filetype less,css setlocal foldmethod=marker foldmarker={,}
-  autocmd Filetype vim setlocal foldmethod=marker
-  autocmd FileType html setlocal foldmethod=manual
-  autocmd FileType ruby setlocal foldmethod=syntax
-  autocmd Filetype ocaml setlocal foldmethod=expr foldexpr=OMLetFoldLevel(v:lnum)
-augroup END
-" }}}
-
-" }}}
-
-" Plugin config ---------------------------------------------------------- {{{
-
-" Clam {{{
-" Maps ! to Clam or ClamVisual depending on the mode.
-nnoremap ! :Clam<space>
-vnoremap ! :ClamVisual<space>
-" }}}
-
-" CtrlP {{{
-nnoremap <Leader>t :CtrlP<cr>
-
-" Uses the current working directory as root folder.
-let g:ctrlp_cmd = 'CtrlPCurWD'
-
-" Additional mapping for tag search
-nnoremap <Leader>y :CtrlPTag<cr>
-
-" Additional mapping for buffer search
-nnoremap <leader>b :CtrlPBuffer<cr>
-
-" Change the listing order of the files in the match window.
-let g:ctrlp_match_window_reversed = 0
-
-" The maximum number of files to scan, set to 0 for no limit: >
-let g:ctrlp_max_files = 200
-
-" Ignore these specific files and folders..
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v([\/]\.(git|hg|svn)|view|tmp)$',
-      \ 'file': '\v\.(o|exe|netrwhist)|tags$',
-      \ }
-let g:ctrlp_extensions = ['tag']
-
-" }}}
-
-" Gundo {{{
-
-" }}}
-
-" Syntastic {{{
-
-" Syntax check on opening and saving buffers.
-let g:syntastic_check_on_open=1
-
-" Uses the sign interface to mark syntax errors.
-" let g:syntastic_enable_signs=1
-
-" Opens error window when errors are detected, and closes when none are
-" detected.
-" let g:syntastic_auto_loc_list=1
-
-" Don't check syntax for these filetypes.
-let g:syntastic_mode_map = { "mode": "active",
-      \			"active_filetypes": [],
-      \			"passive_filetypes": ['html', 'css'] }
-
-" Customize warning and error gutter symbols.
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_error_symbol='✗'
-
-" Specify the height of the location lists that syntastic opens.
-" let g:syntastic_loc_list_height=5
-
-" }}}
-
 " tComment {{{
 " Comment current line or selection.
 map <Leader>c <C-_><C-_>
-" }}}
-
-" NERDTree {{{
-let NERDTreeWinPos = "right"
-let NERDTreeIgnore = ['\~$', '*.o']
-" }}}
-
-" Ocaml Fold {{{
-augroup ocaml
-  autocmd!
-  autocmd FileType ocaml let g:ocaml_folding = 1
-augroup END
-" }}}
-
-" }}}
-
-" Local shit ------------------------------------------------------------- {{{
-" Source local file if it exists.
-if filereadable(glob("~/.vimrc.local"))
-  let $MYLOCALVIMRC="~/.vimrc.local"
-  source $MYLOCALVIMRC
-endif
 " }}}
