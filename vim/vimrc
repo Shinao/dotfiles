@@ -4,7 +4,7 @@ filetype indent plugin on
 
 " Basic options ----------------------------------------------------------- {{{
 
-colorscheme badwolf
+colorscheme jellybeans
 
 let mapleader = ","		" <Leader> key.
 set autoread			" Update modified files outside of VIM.
@@ -101,10 +101,6 @@ set whichwrap+=<,>,h,l,[,]		" Wrap chars.
 nnoremap ; :
 vnoremap ; :
 
-" Out of insert mode.
-inoremap jj <ESC>
-inoremap kk <ESC>
-
 " Word wrapping.
 noremap j gj
 noremap k gk
@@ -175,6 +171,8 @@ nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
 nnoremap T :tabnew<cr>
 nnoremap H :tabprev<cr>
 nnoremap L :tabnext<cr>
+nnoremap ' :tabedit 
+
 
 " Search for visual block.
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
