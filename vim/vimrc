@@ -168,6 +168,7 @@ nnoremap <silent>gt :echo "Use <C-]>, stupid."<CR>
 nnoremap <c-\> <c-w>v<c-w><c-l><c-]><c-w><c-h>
 
 " Tabs
+nnoremap <Tab> ==
 nnoremap T :tabnew<cr>
 nnoremap H :tabprev<cr>
 nnoremap L :tabnext<cr>
