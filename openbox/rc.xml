@@ -40,7 +40,7 @@
                     'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>EasyGray</name>
+    <name>Greenieopenbox</name>
     <titleLayout>DSLIMC</titleLayout>
     <!--
       avaible characters are NDSLIMC, each can occur at most once.
@@ -132,7 +132,7 @@
     </names>
     <popupTime>0</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
-         desktops.  Set this to 0 to disable the popup. -->
+	 desktops.  Set this to 0 to disable the popup. -->
   </desktops>
   <resize>
     <drawContents>yes</drawContents>
@@ -144,10 +144,10 @@
       <!-- these are used if popupPosition is set to 'Fixed' -->
       <x>10</x>
       <!-- positive number for distance from left edge, negative number for
-           distance from right edge, or 'Center' -->
+	   distance from right edge, or 'Center' -->
       <y>10</y>
       <!-- positive number for distance from top edge, negative number for
-           distance from bottom edge, or 'Center' -->
+	   distance from bottom edge, or 'Center' -->
     </popupFixedPosition>
   </resize>
   <!-- You can reserve a portion of your screen where windows will not cover when
@@ -182,7 +182,33 @@
     <chainQuitKey>C-g</chainQuitKey>
     <keybind key="C-S-k">
       <action name="Execute">
-        <command>amixer sset Master,0 5+</command>
+	<command>amixer sset Master,0 5+</command>
+      </action>
+    </keybind>
+    <keybind key="W-o">
+      <action name="Execute">
+	<execute>amixer -c 0 set Master unmute</execute>
+      </action>
+      <action name="Execute">
+	<execute>amixer -c 0 set Master 2dB-</execute>
+      </action>
+    </keybind>
+    <!-- XF86AudioRaiseVolume 2db-increase -->
+    <keybind key="W-p">
+      <action name="Execute">
+	<execute>amixer -c 0 set Master unmute</execute>
+      </action>
+      <action name="Execute">
+	<execute>amixer -c 0 set Master 2dB+</execute>
+      </action>
+    </keybind>
+    <keybind key="W-i">
+      <action name="Execute">
+	<startupnotify>
+	  <enabled>true</enabled>
+	  <name>Toggle mute</name>
+	</startupnotify>
+	<command>amixer set Master toggle</command>
       </action>
     </keybind>
     <keybind key="C-S-j">

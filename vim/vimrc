@@ -181,7 +181,7 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " SHUT THE FUCK UP.
 nnoremap Q <NOP>
-nnoremap <Space> :set hls!
+nnoremap <Space> :set hls!<cr>
 
 " Quick file opening.
 nnoremap <leader>lv :tabedit $MYLOCALVIMRC<cr>
