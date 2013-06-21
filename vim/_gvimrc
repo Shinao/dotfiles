@@ -1,5 +1,10 @@
 " fucking windows
 set guifont=Consolas:h10
+
+behave mswin
+
+cd C:\MinGW\msys\1.0\home\Raphael
+
 set go-=m
   set go-=T
   set go-=l
