@@ -29,3 +29,6 @@
   helper = cache --timeout=3600
 
 ; vim:ft=gitconfig:
+[user]
+	email = rmonnerat.pro@gmail.com
+	name = Shinao
