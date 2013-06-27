@@ -1,13 +1,28 @@
-rm -rf ~/bin
 rm ~/.bashrc
 rm ~/.bash_aliases
 rm ~/.inputrc
-ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
-ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
-ln -s ~/.dotfiles/inputrc ~/.inputrc
-ln -s ~/.dotfiles/git/gitignore ~/.gitignore
-ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/.dotfiles/bin ~/bin
-ln -s ~/.dotfiles/conky/conkyrc	 ~/.conkyrc
-ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+rm ~/.conkyrc
+rm ~/.config/tint2/tint2rc
+rm ~/.config/openbox/rc.xml
+rm ~/.config/openbox/menu.xml
+rm ~/.config/openbox/autostart
+
+ln -s ~/dotfiles/bin ~/bin
+ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+ln -s ~/dotfiles/bash/bash_aliases ~/.bash_aliases
+ln -s ~/dotfiles/inputrc ~/.inputrc
+
+ln -s ~/dotfiles/git/gitignore ~/.gitignore
+ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
+
+ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/dotfiles/vim/autoload ~/.vim/
+ln -s ~/dotfiles/vim/colors ~/.vim/
+ln -s ~/dotfiles/vim/plugin ~/.vim/
+
+ln -s ~/dotfiles/conky/conkyrc	 ~/.conkyrc
+ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/openbox/menu.xml ~/.config/openbox/
+ln -s ~/dotfiles/openbox/rc.xml ~/.config/openbox/
+ln -s ~/dotfiles/openbox/autostart ~/.config/openbox/
+ln -s ~/dotfiles/tint2/tint2rc ~/.config/tint2/

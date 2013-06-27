@@ -4,8 +4,6 @@ filetype indent plugin on
 
 " Basic options ----------------------------------------------------------- {{{
 
-colorscheme jellybeans
-
 let mapleader = ","		" <Leader> key.
 set autoread			" Update modified files outside of VIM.
 " set textwidth=80		" Character limit.
@@ -203,3 +201,5 @@ nnoremap <F4> :set paste!<CR>
 " Comment current line or selection.
 map <Leader>c <C-_><C-_>
 " }}}
+
+colorscheme badwolf
