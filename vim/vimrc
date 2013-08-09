@@ -4,6 +4,7 @@ filetype indent plugin on
 
 " Basic options ----------------------------------------------------------- {{{
 
+set wildignorecase		" Insensitive case
 let mapleader = ","		" <Leader> key.
 set autoread			" Update modified files outside of VIM.
 " set textwidth=80		" Character limit.
