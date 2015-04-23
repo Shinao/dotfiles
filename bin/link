@@ -7,22 +7,22 @@ rm ~/.config/openbox/rc.xml
 rm ~/.config/openbox/menu.xml
 rm ~/.config/openbox/autostart
 
-ln -s ~/dotfiles/bin ~/
-ln -s ~/dotfiles/bash/bashrc ~/.bashrc
-ln -s ~/dotfiles/bash/bash_aliases ~/.bash_aliases
-ln -s ~/dotfiles/inputrc ~/.inputrc
+ln -s ~/.dotfiles/bin ~/
+ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
+ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
+ln -s ~/.dotfiles/inputrc ~/.inputrc
 
-ln -s ~/dotfiles/git/gitignore ~/.gitignore
-ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/git/gitignore ~/.gitignore
+ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/dotfiles/vim/autoload ~/.vim/
-ln -s ~/dotfiles/vim/colors ~/.vim/
-ln -s ~/dotfiles/vim/plugin ~/.vim/
+ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/.dotfiles/vim/autoload ~/.vim/
+ln -s ~/.dotfiles/vim/colors ~/.vim/
+ln -s ~/.dotfiles/vim/plugin ~/.vim/
 
-ln -s ~/dotfiles/conky/conkyrc	 ~/.conkyrc
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/openbox/menu.xml ~/.config/openbox/
-ln -s ~/dotfiles/openbox/rc.xml ~/.config/openbox/
-ln -s ~/dotfiles/openbox/autostart ~/.config/openbox/
-ln -s ~/dotfiles/tint2/tint2rc ~/.config/tint2/
+ln -s ~/.dotfiles/conky/conkyrc	 ~/.conkyrc
+ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/openbox/menu.xml ~/.config/openbox/
+ln -s ~/.dotfiles/openbox/rc.xml ~/.config/openbox/
+ln -s ~/.dotfiles/openbox/autostart ~/.config/openbox/
+ln -s ~/.dotfiles/tint2/tint2rc ~/.config/tint2/
