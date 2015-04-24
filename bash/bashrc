@@ -80,7 +80,7 @@ txtwht='\e[0;37m' # White
 txtrst='\e[0m'    # Text Reset
 
 #Prompt.
-export PS1="$txtblu\w$txtrst\n› "
+export PS1="\w$txtrst\n› "
 unset _PS1host _PS1folder _PS1time _PS1git _PS1end
 
 # Alias definitions.
