@@ -10,7 +10,11 @@ alias c='clean'
 alias clean='find -maxdepth 1 -name "#*#" -delete;find -maxdepth 1 -name "*~" -delete'
 alias v='vim'
 alias t='tmux -2'
-alias please='sudo'
+alias please='sudo '
+alias yolo='sudo '
+alias fucking='sudo '
+alias doit='$(history -p !!) '
+alias fu='sudo $(history -p !!)'
 
 # Goto and create folder if needed
 m ()
