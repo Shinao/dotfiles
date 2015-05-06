@@ -3,15 +3,14 @@ alias ll='ls -l --color=auto'
 alias k='kill -9'
 alias f='fg'
 alias w='ls -l --color=auto'
-alias wa='ls -la'
+alias la='ls -la'
 alias a='cd ..'
 alias d='cd'
 alias c='clean'
 alias clean='find -maxdepth 1 -name "#*#" -delete;find -maxdepth 1 -name "*~" -delete'
-alias xnorme='~/script/norme.py ./*'
-alias episvn='sh ~/script/episvn.sh'
 alias v='vim'
 alias t='tmux -2'
+alias please='sudo'
 
 # Goto and create folder if needed
 m ()
